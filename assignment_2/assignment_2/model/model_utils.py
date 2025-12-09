@@ -19,12 +19,12 @@ def bag_of_words_matrix(sentences: List[str]) -> npt.ArrayLike:
         raw_tokens = cleaned.split()
         tokens = [t for t in raw_tokens if t.isalpha()]
         tokenized.append(tokens)
-    
 
     freq = {}
     for tokens in tokenized:
         for t in tokens:
             freq[t] = freq.get(t, 0) + 1
+    
     processed = []
     for tokens in tokenized:
         processed.append([t if freq.get(t, 0) > 2 else "<UNK>" for t in tokens])
@@ -32,27 +32,23 @@ def bag_of_words_matrix(sentences: List[str]) -> npt.ArrayLike:
     for tokens in processed:
         vocab.update(tokens)
 
-
     vocab = sorted(vocab)
 
-    V = len(vocab)#number of unique tokens
-    M = len(sentences)#number of sentences
+    V = len(vocab)
+    M = len(sentences)
 
-    token_to_index = {}
-    for i, tkn in enumerate(vocab):
-        token_to_index[tkn] = i
-    print(token_to_index)
-    X = np.zeros((V,M), dtype=np.int32)
+    token_to_index = {tkn: i for i, tkn in enumerate(vocab)}
+    X = np.zeros((V, M), dtype=np.int32)
 
-    for j, tokens in enumerate(tokenized):
+    for j, tokens in enumerate(processed):
         if not tokens:
             continue
         for tkn in tokens:
             index = token_to_index.get(tkn)
             if index is not None:
-                X[index,j] += 1
+                X[index, j] += 1
 
-    return X
+    return X 
     #########################################################################
 
 def labels_matrix(data: Tuple[List[str], Set[str]]) -> npt.ArrayLike:

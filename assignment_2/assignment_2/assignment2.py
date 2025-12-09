@@ -36,9 +36,13 @@ def main():
     #         1) Convert the sentences and intent to matrices using
     #         `bag_of_words_matrix()` and `labels_matrix()`.
     #         2) Initiallize the model Class with the appropriate parameters
-    X = None
-    Y = None
-    model = None
+    X = bag_of_words_matrix(sentences)
+    Y = labels_matrix((sentences, intent, unique_intent))
+    
+    V = X.shape[0] 
+    K = Y.shape[0]
+    
+    model = NeuralNetwork(input_size=V, hidden_size=150, num_classes=K, seed=1)
     ##################################################################
 
     if not args.minibatch:
