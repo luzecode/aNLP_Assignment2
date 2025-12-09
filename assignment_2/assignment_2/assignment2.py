@@ -48,6 +48,7 @@ def main():
     if not args.minibatch:
         print("Training FFNN using batch gradient descent...")
         batch_train(X, Y, model, train_flag=args.train)
+    
     else:
         print("Training FFNN using mini-batch gradient descent...")
         minibatch_train(X, Y, model, train_flag=args.train)
