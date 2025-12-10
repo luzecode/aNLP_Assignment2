@@ -24,6 +24,12 @@
 \begin{document}
 
 \maketitle
+\section{Training and Testing on Same Data}
+Using the entire dataset for both training and testing can lead to very high
+accuracy results. The model probably overfits, which means that it memorizes
+the training data rather than learning generalizable patterns.
+Therefore, keeping a test set separate from the training data
+would result in more realistic model performance.
 
 % ============================================================
 \section{ReLU and Sigmoid Advantages/Disadvantages}  % Add a title here
@@ -67,7 +73,7 @@ which slows down the learning in deeper networks.
 
 
 
-\subsection{Batch and Mini-Batch Gradient Descent Loss}
+\section{Batch and Mini-Batch Gradient Descent Loss}
 
 \begin{figure}[H]
     \centering
@@ -88,16 +94,16 @@ which slows down the learning in deeper networks.
     \label{fig:loss_comparison}
 \end{figure}
 
-\subsubsection{Observation: Batch GD}
+\subsection{Observation: Batch GD}
 
 The loss decreases from more than 10 to 0.98. 
-During the first epochs, the loss drops drastically, followed by a smooth convergence.
+During the first epochs, the loss drops the most, followed by a smooth convergence.
 The accuracy starts at 12.2\% and improves
 to 75.40\%, which shows that the network was trained successfully.
 
 \subsection{Observation: Mini-Batch GD}
 
-With mini-batch training, the loss decreases even more dramatically than with batch GD.
+With mini-batch training, the loss decreases even more dramatically than with Batch GD.
 From a loss of 10.0 it decreases to 0.04, where the first 100 epochs show the 
 most drastic drop from 10.0 to 0.59, followed by a continued steady decrease throughout training.
 The accuracy, same as for batch GD, starts at 12.2\%, representing random guessing.
@@ -105,11 +111,28 @@ Mini-batch improves to 99.30\%, which is significantly higher than the accuracy 
 batch GD. Mini-batch has an increased number of weight
 updates per epoch, which allows the network to learn more effectively.
 
-\subsection{GitHub Repository}
 
-GitHub Repository: \url{https://github.com/luzecode/aNLP-Assignment1-Hate-Speech-Detection.git}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{sgd_loss.png}
+    \caption{Training loss for SGD (batch\_size=1) over 1000 epochs.}
+    \label{fig:sgd_loss}
+\end{figure}
 
-\textbf{Last commit hash:} \texttt{3f9c7d1a}
+\subsection{Observation: Stochastic GD}
+
+SGD shows the most drastic loss decrease within the first epochs compared to the other gradient descent methods. 
+Starting with a loss of 3 and dropping to close to zero within the first few epochs, this indicates 
+that the model overfits to the training set.
+The accuracy reaches 99.9\%, which is unusually high and confirms overfitting.
+This is due to testing on the same data used for training.
+
+
+\section{GitHub Repository}
+
+GitHub Repository: \url{https://github.com/luzecode/aNLP_Assignment2.git}
+
+\textbf{Last commit hash:} \texttt{Added Report and Jupyter Notebook for Plots, some adjustments to the Code}
 
 
 

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1765303773.92628 "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" "main.pdf" "main" 1765303775.43053 0
+["pdflatex"] 1765387410.27487 "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" "main.pdf" "main" 1765387413.31822 0
   "C:/Users/lucia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750259493 85335 7b6cbc4ac0ee51e6287bb254b541eb49 ""
   "C:/Users/lucia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732808490 24225047 5256b5fc693642dad994e1a63b52dd68 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -85,12 +85,13 @@
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "ReLuandItsDerivative.png" 1765298509 24421 7cde4bb45e7c36d76b33c9b610184f90 ""
   "SigmoidandItsDerivative.png" 1765298527 31481 556f2ace782c6c8ef801807afee0b555 ""
-  "batch_gd_loss.png" 1765302129 108029 d3a7b904d2b5a43541104b002d4a2402 ""
-  "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" 1765303771 4761 6ecc7a87534edb53f028f9225889d6da ""
-  "main.aux" 1765303775 2702 89c79a73b73952c189f570cbddc06615 "pdflatex"
-  "main.out" 1765303775 1272 e9ff8138520f0f1e3bab017156a4ca04 "pdflatex"
-  "main.tex" 1765303771 4761 6ecc7a87534edb53f028f9225889d6da ""
-  "minibatch_gd_loss.png" 1765302778 106581 344b60ab0dca2caec70772498672afe5 ""
+  "batch_gd_loss.png" 1765386699 108029 d3a7b904d2b5a43541104b002d4a2402 ""
+  "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" 1765387405 5826 c940f431fece1caa6cf6c9f8a86c5642 ""
+  "main.aux" 1765387413 3217 719cda2f52c0717954421f41cbf56487 "pdflatex"
+  "main.out" 1765387413 1650 9d8467c07e0c4d520281848bb7f6e716 "pdflatex"
+  "main.tex" 1765387405 5826 c940f431fece1caa6cf6c9f8a86c5642 ""
+  "minibatch_gd_loss.png" 1765386759 106543 2943312151207b5f958507144a5cf76b ""
+  "sgd_loss.png" 1765387004 92781 10f670b635dac13a884ff63df66fe301 ""
   (generated)
   "main.aux"
   "main.log"

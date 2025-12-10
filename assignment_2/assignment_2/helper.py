@@ -20,11 +20,6 @@ def batch_train(X, Y, model, train_flag=False):
     M = X.shape[1]
     costs = []
 
-    P = model.forward(X)
-    pred = model.predict(X, one_hot=True)
-    acc_before = np.mean(np.argmax(pred, axis=0) == np.argmax(Y, axis=0))
-    print(f"Accuracy before training: {acc_before:.4f}")
-
     if train_flag:
         for e in range(epochs):
             P = model.forward(X)
@@ -43,15 +38,15 @@ def batch_train(X, Y, model, train_flag=False):
                 print(f"Epoch {e+1}, Loss: {loss:.4f}")
         
     
-        pred_after = model.predict(X, one_hot=True)
-        acc_after = np.mean(np.argmax(pred_after, axis=0) == np.argmax(Y, axis=0))
-        print(f"Accuracy after training: {acc_after:.4f}")
+        prediction = model.predict(X, one_hot=True)
+        accuracy = np.mean(np.argmax(prediction, axis=0) == np.argmax(Y, axis=0))
+        print(f"Accuracy after: {accuracy:.4f}")
     
     return costs
     ###############################################################################
 
 
-def minibatch_train(X, Y, model, train_flag=False):
+def minibatch_train(X, Y, model, train_flag=False, batch_size = 64):
     ########################## STUDENT SOLUTION #############################
     # YOUR CODE HERE
     #     TODO:
@@ -60,14 +55,9 @@ def minibatch_train(X, Y, model, train_flag=False):
     #         = 0.005. Then, plot the cost vs iteration for both cases.
     epochs = 1000
     l_rate = 0.005
-    batch_size = 64 
     M = X.shape[1]
     costs = []
 
-    P = model.forward(X)
-    pred = model.predict(X, one_hot=True)
-    acc_before = np.mean(np.argmax(pred, axis=0) == np.argmax(Y, axis=0))
-    print(f"Accuracy before training: {acc_before:.4f}")
     
     if train_flag:
         for e in range(epochs):
@@ -100,9 +90,9 @@ def minibatch_train(X, Y, model, train_flag=False):
             if (e + 1) % 100 == 0:
                 print(f"Epoch {e+1}, Loss: {costs[-1]:.4f}")
             
-        pred_after = model.predict(X, one_hot=True)
-        acc_after = np.mean(np.argmax(pred_after, axis=0) == np.argmax(Y, axis=0))
-        print(f"Accuracy after training: {acc_after:.4f}")
+        prediction = model.predict(X, one_hot=True)
+        accuracy = np.mean(np.argmax(prediction, axis=0) == np.argmax(Y, axis=0))
+        print(f"Accuracy after training: {accuracy:.4f}")
     
     return costs
     #########################################################################
