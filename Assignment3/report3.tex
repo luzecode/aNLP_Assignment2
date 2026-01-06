@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Title information
+\title{\textbf{Advanced Natural Language Processing} \\
+
+       \large Assignment 3: Character-level Language Modelling with LSTM}
+\author{Lucia Welther, Matrikelnummer: 835106}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\section{LSTM Model}
+
+The LSTM model was implemented with three layers as specified:
+\begin{enumerate}
+    \item \textbf{Embedding Layer}: Maps character indices (0-99 from \texttt{string.printable}) to dense vectors of dimension 128.
+    \item \textbf{LSTM Layer}: Two stacked LSTM layers process the embedded input, maintaining hidden and cell states of dimension 128.
+    \item \textbf{Decoder Layer}: A linear layer projects the hidden state back to the vocabulary space (100 dimensions), producing logits for the next character.
+\end{enumerate}
+
+The hidden and cell states are initialized to zero vectors at $t=0$ with shape $[\text{n\_layers}, \text{batch\_size}, \text{hidden\_size}] = [2, 1, 128]$.
+
+\subsection{Default Training Configuration}
+
+The default training parameters are:
+\begin{itemize}
+    \item \textbf{n\_epochs}: 3000 total training iterations
+    \item \textbf{print\_every}: 100 (sample generation frequency)
+    \item \textbf{plot\_every}: 10 (loss recording frequency)
+    \item \textbf{hidden\_size}: 128 (LSTM hidden dimension)
+    \item \textbf{n\_layers}: 2 (stacked LSTM depth)
+    \item \textbf{Learning rate}: 0.005 (Adam optimizer)
+\end{itemize}
+
+\subsection{Training Process and Results}
+
+During training, the model learns to predict the next character in Dickens' novels, one character at a time. The training loop:
+\begin{enumerate}
+    \item Samples a random 200-character chunk from the training corpus
+    \item Creates input/target pairs offset by one position (e.g., input ``ab'' predicts target ``bc'')
+    \item Computes cross-entropy loss between predicted character distribution and ground truth
+    \item Backpropagates gradients and updates weights via Adam optimizer
+\end{enumerate}
+
+\subsection{Observed Learning Progression}
+
+
+The training loss decreases from an initial $\approx 2.56$ at epoch 100 to $\approx 1.75$ by epoch 3000, indicating the model is learning meaningful character dependencies. Key observations:
+
+\begin{itemize}
+    \item \textbf{Early epochs (0-500)}: Loss remains high ($\approx 2.0$-$2.5$). Generated text is mostly random character sequences with occasional dictionary words like ``the'', ``and'', ``Mr.''. The model has not yet learned English structure.
+    
+    \item \textbf{Mid epochs (500-1500)}: Loss gradually decreases to $\approx 1.8$-$1.9$. Generated text shows emerging word boundaries and common English patterns. Proper nouns (``Mr.'', ``She'') appear more frequently. Sentence-like structures begin to form, though still largely incoherent.
+    
+    \item \textbf{Later epochs (1500-3000)}: Loss stabilizes around $1.6$-$1.8$. Generated text exhibits increasingly coherent word sequences and grammatical structures. The model learns to produce proper spacing, punctuation, and realistic word sequences like ``I have'', ``the way'', ``little more''. Some samples show proto-dialogue structure with quotation marks.
+\end{itemize}
+
+The model demonstrates the characteristic learning trajectory of language models: first learning character-level statistics and spacing, then progressing to word-level patterns, and finally developing rudimentary syntactic awareness. By epoch 2500-3000, generated samples approximate Dickens' prose style with recognizable Victorian-era vocabulary and sentence structure, though semantic coherence remains limited.
+
+\subsection{Why Character-Level vs. Word-Level?}
+
+A character-level model, unlike word-level models, does not require a predefined vocabulary. It can generate any character sequence, including misspellings, novel word formations, and punctuation handling. This flexibility comes at the cost of longer sequences (needing to predict many more timesteps) and slower training, as evidenced by the 25+ minute training time for 3000 epochs on CPU.
+
+
+\section{}
+
+
+
+
+
+
+
+\end{document}

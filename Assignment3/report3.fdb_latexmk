@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1765387410.27487 "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" "main.pdf" "main" 1765387413.31822 0
+["pdflatex"] 1767698256.09 "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/Assignment3/report3.tex" "report3.pdf" "report3" 1767698257.05465 0
   "C:/Users/lucia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1750259493 85335 7b6cbc4ac0ee51e6287bb254b541eb49 ""
+  "C:/Users/lucia/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1733938843 12668 289605a7259a0196dbd6c23771723384 ""
   "C:/Users/lucia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1732808490 24225047 5256b5fc693642dad994e1a63b52dd68 ""
+  "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1095.tfm" 993062508 1460 8005ce585ff351dff78998923504da5e ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -83,18 +85,13 @@
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/lucia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "ReLuandItsDerivative.png" 1765298509 24421 7cde4bb45e7c36d76b33c9b610184f90 ""
-  "SigmoidandItsDerivative.png" 1765298527 31481 556f2ace782c6c8ef801807afee0b555 ""
-  "batch_gd_loss.png" 1765386699 108029 d3a7b904d2b5a43541104b002d4a2402 ""
-  "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/assignment_2/assignment_2/main.tex" 1765387405 5826 c940f431fece1caa6cf6c9f8a86c5642 ""
-  "main.aux" 1765387413 3217 719cda2f52c0717954421f41cbf56487 "pdflatex"
-  "main.out" 1765387413 1650 9d8467c07e0c4d520281848bb7f6e716 "pdflatex"
-  "main.tex" 1765387405 5826 c940f431fece1caa6cf6c9f8a86c5642 ""
-  "minibatch_gd_loss.png" 1765386759 106543 2943312151207b5f958507144a5cf76b ""
-  "sgd_loss.png" 1765387004 92781 10f670b635dac13a884ff63df66fe301 ""
+  "c:/Users/lucia/OneDrive/Documents/CognitiveSystems/WiSe1/aNLP/Assignment3/report3.tex" 1767698249 4428 80cf6d38aa6c532201d79a6c15d448a8 ""
+  "report3.aux" 1767698256 916 9d575046b7a22a1bf288ed87260bb35b "pdflatex"
+  "report3.out" 1767698256 999 5cf38593971da48043e50f44389ea54d "pdflatex"
+  "report3.tex" 1767698249 4428 80cf6d38aa6c532201d79a6c15d448a8 ""
   (generated)
-  "main.aux"
-  "main.log"
-  "main.out"
-  "main.pdf"
+  "report3.aux"
+  "report3.log"
+  "report3.out"
+  "report3.pdf"
   (rewritten before read)
